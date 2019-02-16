@@ -20,6 +20,11 @@ app.get("/", function(req, res) {
   });
 
   app.get("/api/tables", function(req, res) {
+    return res.json(currentArray)
+    
+  });
+
+  app.get("/api/waitlist", function(req, res) {
     return res.json(waitingArray)
     
   });
@@ -34,9 +39,17 @@ app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
   });
   
-  app.post("/api/tables",  function(req, res) {
+  app.post("/api/waitlist",  function(req, res) {
     var newcharacter = req.body;
     waitingArray.push(newcharacter)
+    res.json(newcharacter)
+    console.log(newcharacter)
+    
+})
+
+  app.post("/api/tables",  function(req, res) {
+    var newcharacter = req.body;
+    currentArray.push(newcharacter)
     res.json(newcharacter)
     console.log(newcharacter)
     
