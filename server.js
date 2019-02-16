@@ -16,5 +16,38 @@ let waitingArray = []
 let currentArray = []
 
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "view.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
   });
+
+  app.get("/api/tables", function(req, res) {
+    return res.json(waitingArray)
+    
+  });
+
+
+  app.get("/tables", function(req, res) {
+    res.sendFile(path.join(__dirname, "tables.html"));
+  });
+
+  
+app.get("/reserve", function(req, res) {
+    res.sendFile(path.join(__dirname, "reserve.html"));
+  });
+  
+  app.post("/api/tables",  function(req, res) {
+    var newcharacter = req.body;
+    waitingArray.push(newcharacter)
+    res.json(newcharacter)
+    console.log(newcharacter)
+    
+})
+
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
+  
+ 
+
+
+  
+  
