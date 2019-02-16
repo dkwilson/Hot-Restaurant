@@ -95,6 +95,17 @@ let currentArray = []
         id: $("#reserve-unique-id").val().trim()
      
       }
+      
+      $.post("/api/waitlist", newTable, function(data) {
+
+if(data) {
+    console.log("It works")
+}
+    else {
+        console.log("It doesnt works")
+    }
+
+})
 
       $.post("/api/tables", newTable, function(data) {
 
