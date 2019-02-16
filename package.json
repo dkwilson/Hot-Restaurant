@@ -1,0 +1,26 @@
+{
+  "name": "Hot-Restaurant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkwilson/Hot-Restaurant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dkwilson/Hot-Restaurant/issues"
+  },
+  "homepage": "https://github.com/dkwilson/Hot-Restaurant#readme",
+  "dependencies": {
+    "expres": "0.0.5",
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  }
+}
